@@ -1,0 +1,1 @@
+from fastapi import FastAPI, Requestfrom NSMC.datamodule import BERTDatasetfrom NSMC.trainmodule import Classifierapp = FastAPI()
