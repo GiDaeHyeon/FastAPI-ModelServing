@@ -1,1 +1,1 @@
-# FastAPI-ModelServing
+# FastAPI-ModelServingfastapi를 활용한 BERT 모델 서빙 연습

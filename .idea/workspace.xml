@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ae97ed7-673c-4d3f-a325-3bf31d6503cb" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/app/model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NSMC/datamodule.py" beforeDir="false" afterPath="$PROJECT_DIR$/NSMC/datamodule.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NSMC/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/NSMC/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSMC/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/NSMC/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployfiles/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/deployfiles/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deployfiles/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/deployfiles/nginx.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +48,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1633430980354</updated>
-      <workItem from="1633430983628" duration="2370000" />
+      <workItem from="1633430983628" duration="5460000" />
     </task>
     <servers />
   </component>
