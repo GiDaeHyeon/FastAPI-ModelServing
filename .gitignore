@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Checkpoint & logs
+/NSMC/CKPT/
+/NSMC/log/
+
+core

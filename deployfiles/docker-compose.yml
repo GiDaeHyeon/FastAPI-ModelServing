@@ -1,1 +1,48 @@
-version: "3"services:  fastapi-1:    build:      context: ./      dockerfile: Dockerfile    networks:      - fastapi-test    ports:      - "2157:2157"    restart: always    container_name: fastapi-1    volumes:      - path:/usr/src/app/fastapi_test    command: bash -c "python3 -m gunicorn -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:2157 -w 4"  fastapi-2:    build:      context: ./      dockerfile: Dockerfile    networks:      - fastapi-test    ports:      - "2158:2158"    restart: always    container_name: fastapi-2    volumes:      - path:/usr/src/app/fastapi_test    command: bash -c "python3 -m gunicorn -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:2158 -w 4"  nginx:    image: nginx:1.19.5    container_name: web_server    networks:      - fastapi-test    volumes:      - path:/var/log/nginx/default # logfolder      - path:/etc/nginx/nginx.conf # conf file    ports:      - "80:80"    depends_on:      - fastapi-1      - fastapi-2networks:  fastapi-test:
+version: "3"
+
+services:
+  fastapi-1:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    networks:
+      - fastapi-test
+    ports:
+      - "2157:2157"
+    restart: always
+    container_name: fastapi-1
+    volumes:
+      - Some/Directory:/usr/src/app/fastapi_test
+    command: bash -c "python3 -m gunicorn -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:2157 --reload"
+
+  fastapi-2:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    networks:
+      - fastapi-test
+    ports:
+      - "2158:2158"
+    restart: always
+    container_name: fastapi-2
+    volumes:
+      - Some/Directory:/usr/src/app/fastapi_test
+    command: bash -c "python3 -m gunicorn -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:2158 --reload"
+
+  nginx:
+    image: nginx:1.19.5
+    container_name: web_server
+    restart: always
+    networks:
+      - fastapi-test
+    volumes:
+      - Some/Directory/deployfiles/logs:/var/log/nginx # logfolder
+      - Some/Directory/deployfiles/nginx.conf:/etc/nginx/nginx.conf # conf file
+    ports:
+      - "80:80"
+    depends_on:
+      - fastapi-1
+      - fastapi-2
+
+networks:
+  fastapi-test:
